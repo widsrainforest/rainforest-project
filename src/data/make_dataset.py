@@ -16,6 +16,26 @@ def load_raw_labels():
 
     return df
 
+def load_independent_vars():
+    df = pd.read_csv(os.path.join(DATA_PATH, 'processed','processed_data_X.csv'))
+
+    return df
+
+def load_dependent_vars():
+    df = pd.read_csv(os.path.join(DATA_PATH, 'processed','processed_labels_Y.csv'))
+
+    return df
+
+def load_labels():
+    with open(os.path.join(DATA_PATH, 'processed','labels_list.txt'), 'r') as f:
+        labels = json.load(f)
+
+    return labels
+
+def save_data(df, path, filename):
+
+    df.to_csv(os.path.join(DATA_PATH, path, filename), index=False)
+
 def make_binary_labels(df):
     '''
         Input: df from train_v2.csv, Ouput: df with binary values for each possible label.
@@ -129,3 +149,19 @@ def save_processed_data(df):
     df.to_csv(os.path.join(DATA_PATH, 'processed','processed_data_X.csv'), index=False)
     y.to_csv(os.path.join(DATA_PATH, 'processed','processed_labels_Y.csv'), index=False)
 
+def add_random_lat_lon(df, lat_lon):
+
+    mean, cov = [0, 0], [(0, 10), (5, 0)]
+    n = len(df)
+    data = np.random.multivariate_normal(mean, cov, n)
+
+    lat = data[:,0]
+    lon = data[:,1]
+
+    lat = lat + lat_lon[0]
+    lon = lon + lat_lon[1]
+
+    df['lat'] = pd.Series(lat)
+    df['lon'] = pd.Series(lon)
+    
+    return df
