@@ -11,6 +11,13 @@ from PIL import Image
 PARENT_PATH = Path(os.getcwd()).resolve().parents[0]
 DATA_PATH = os.path.join(PARENT_PATH, 'data')
 
+def make_folders():
+    if not os.path.exists(os.path.join(DATA_PATH, 'interim')):
+        os.mkdir(os.path.join(DATA_PATH, 'interim'))
+
+    if not os.path.exists(os.path.join(DATA_PATH, 'processed')):
+        os.mkdir(os.path.join(DATA_PATH, 'processed'))
+
 def load_raw_labels(): 
     df = pd.read_csv(os.path.join(DATA_PATH, 'raw','train_v2.csv'))
 
