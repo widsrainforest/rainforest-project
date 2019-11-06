@@ -13,7 +13,7 @@ sys.path.append("..")
 from src.app import app_tools
 from src.data import make_dataset
 
-models, labels = app_tools.load_models('02_Nov_19_log_reg')
+models, labels = app_tools.load_models('05_Nov_19_log_reg')
 
 predictions = app_tools.load_predict_image('train_0.jpg', models)
 

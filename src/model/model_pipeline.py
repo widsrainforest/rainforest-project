@@ -16,13 +16,11 @@ DATA_PATH = os.path.join(PARENT_PATH, 'data')
 
 def load_independent_vars():
     df = pd.read_csv(os.path.join(DATA_PATH, 'processed','processed_data_X.csv'))
-    df.drop('image_name', axis=1, inplace=True)
 
     return df
 
 def load_dependent_vars():
     df = pd.read_csv(os.path.join(DATA_PATH, 'processed','processed_labels_Y.csv'))
-    df.drop('image_name', axis=1, inplace=True)
 
     return df
 
