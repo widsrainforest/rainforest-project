@@ -164,45 +164,7 @@ app.layout = html.Div([
             style={
                 'textAlign': 'left'},
         ),
-        html.Div([
-        #     html.Label(children="Atmosheric Conditions",
-        #     style={'textAlign': 'left'}
-        #     ),
-
-            # html.Div([ 
-            #     dcc.Dropdown(
-            #         id='dropdown1',
-            #         options=[
-            #             {'label': 'Partly cloudy', 'value': 'partly_cloudy'},
-            #             {'label': 'Cloudy', 'value': 'cloudy'},
-            #             {'label': 'Hazy','value': 'haze'},
-            #             {'label': 'Clear', 'value': 'clear'},
-            #         ],
-            #             value=[''],
-            #     className='four columns',
-            #     style={'margin-top': '10'}
-            #     ),
-            # ], className='row'),
-
-            # html.Label(
-            #     children="Land Use",
-            #     style={
-            #         'textAlign': 'left'},
-            # ),
-            # html.Div([
-            #     dcc.Dropdown(
-            #     id='dropdown2',
-            #     options=[
-            #         {'label': 'Slash and Burn', 'value': 'slash_and_burn'},
-            #         {'label': 'Selective Logging', 'value': 'selective_logging'},
-            #         {'label': 'Conventional Mining', 'value': 'conventional_mining'},
-            #         {'label': 'Artisinal Mining', 'value': 'artisinal_mining'},
-            #     ],
-            #         value=[''],
-            #     className='four columns',
-            #     ),
-            # ], className='row'),
-            
+        html.Div([   
                 html.Label(
                     children="Multi-Select Dropdown",
                     style={
